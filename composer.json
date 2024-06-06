@@ -1,0 +1,22 @@
+{
+    "description": "Neos CMS package to list and download sitemap urls",
+    "type": "neos-package",
+    "name": "internezzo/sitemap-export",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "neos/neos": "^8.0",
+        "neos/fusion": "^8.0",
+        "neos/seo": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Internezzo\\SitemapExport\\": "Classes"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Internezzo.SitemapExport"
+        }
+    },
+    "version": "1.0.0"
+}

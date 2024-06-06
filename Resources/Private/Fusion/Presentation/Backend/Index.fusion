@@ -1,0 +1,36 @@
+prototype(Internezzo.SitemapExport:Backend.Presentation.Index) < prototype(Neos.Fusion:Component) {
+
+    titleLabel = ''
+    uriLabel = ''
+    downloadLabel = ''
+    language = 'de'
+    languages = ${[]}
+    nodes = ''
+
+    renderer = afx`
+        <div class="neos-content">
+            <Neos.Fusion:Loop items={props.languages}>
+                <Neos.Fusion:Link.Action class={'neos-button' + (props.language == itemKey ? ' neos-active' : '')} href.package="Internezzo.SitemapExport" href.controller="backend\\SitemapExport" href.action="index" href.arguments={{language: itemKey}}>
+                    {String.toUpperCase(itemKey)}
+                </Neos.Fusion:Link.Action>
+                &nbsp;
+            </Neos.Fusion:Loop>
+            <table class="neos-table">
+                <thead>
+                    <tr>
+                        <th>{props.titleLabel}</th>
+                        <th>{props.uriLabel}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {props.nodes}
+                </tbody>
+            </table>
+            <div class="neos-footer">
+                <Neos.Fusion:Link.Action class="neos-button neos-button-primary" href.package="Internezzo.SitemapExport" href.controller="backend\\SitemapExport" href.action="download" href.arguments={{language: props.language}}>
+                    {String.toUpperCase(props.language)} {props.downloadLabel}
+                </Neos.Fusion:Link.Action>
+            </div>
+        </div>
+    `
+}

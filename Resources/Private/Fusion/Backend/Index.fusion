@@ -1,0 +1,20 @@
+prototype(Internezzo.SitemapExport:Backend.Index) < prototype(Neos.Fusion:Component) {
+
+    renderer = Internezzo.SitemapExport:Backend.Presentation.Index {
+        titleLabel = ${Translation.translate('title.label', 'Titel', [], 'Backend', 'Internezzo.SitemapExport')}
+        uriLabel = ${Translation.translate('uri.label', 'URL', [], 'Backend', 'Internezzo.SitemapExport')}
+        downloadLabel = ${Translation.translate('download.label', 'URL', [], 'Backend', 'Internezzo.SitemapExport')}
+        language = ${language}
+        languages = ${languageDimensionPresets}
+        nodes = Neos.Fusion:Loop {
+            items = Neos.Seo:Helper.SitemapUrls {
+                startingPoint = ${siteNode}
+                includeImageUrls = false
+            }
+            itemRenderer = Internezzo.SitemapExport:Backend.Presentation.Item {
+                title = ${q(item.node).property('title')}
+                uri = ${Internezzo.SitemapExport.Sitemap.getFrontendUri(item.node)}
+            }
+        }
+    }
+}

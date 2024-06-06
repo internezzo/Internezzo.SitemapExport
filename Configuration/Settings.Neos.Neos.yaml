@@ -1,0 +1,18 @@
+Neos:
+  Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          Internezzo.SitemapExport:
+            - 'NodeTypes/*'
+    fusion:
+      autoInclude:
+        Internezzo.SitemapExport: true
+    modules:
+      management:
+        submodules:
+          sitemapExportModule:
+            label: 'Sitemap Export'
+            controller: Internezzo\SitemapExport\Controller\Backend\SitemapExportController
+            description: 'Show list of public links'
+            icon: icon-link

@@ -1,0 +1,14 @@
+prototype(Internezzo.SitemapExport:Backend.Presentation.Item) < prototype(Neos.Fusion:Component) {
+
+    title = ''
+    uri = ''
+
+    renderer = afx`
+        <tr>
+            <td>{props.title}</td>
+            <td>
+                <a href={props.uri} target="_blank">{props.uri}</a>
+            </td>
+        </tr>
+    `
+}

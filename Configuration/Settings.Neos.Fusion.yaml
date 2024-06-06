@@ -1,0 +1,4 @@
+Neos:
+  Fusion:
+    defaultContext:
+      Internezzo.SitemapExport.Sitemap: Internezzo\SitemapExport\Eel\Helper\SitemapHelper

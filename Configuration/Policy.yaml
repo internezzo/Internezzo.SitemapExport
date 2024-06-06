@@ -1,0 +1,11 @@
+privilegeTargets:
+  'Neos\Neos\Security\Authorization\Privilege\ModulePrivilege':
+    'Internezzo.SitemapExport:SitemapExportModule':
+      matcher: 'management/sitemapExportModule'
+
+roles:
+  'Neos.Neos:Administrator':
+    privileges:
+      -
+        privilegeTarget: 'Internezzo.SitemapExport:SitemapExportModule'
+        permission: GRANT

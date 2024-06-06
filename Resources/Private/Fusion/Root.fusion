@@ -1,0 +1,5 @@
+include: resource://Internezzo.SitemapExport/Private/Fusion/**/*.fusion
+include: resource://Neos.Fusion/Private/Fusion/Root.fusion
+include: resource://Neos.Seo/Private/Fusion/Root.fusion
+
+Internezzo.SitemapExport.Backend.SitemapExportController.index = Internezzo.SitemapExport:Backend.Index

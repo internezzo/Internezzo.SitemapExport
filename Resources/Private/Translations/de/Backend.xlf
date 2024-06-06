@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" datatype="plaintext" display-name="Backendmodul Sitemap Export" source-language="de" target-language="de" product-name="Internezzo.SitemapExport">
+    <body>
+      <trans-unit id="title.label" space="preserve">
+        <source><![CDATA[Titel]]></source>
+        <target><![CDATA[Titel]]></target>
+      </trans-unit>
+      <trans-unit id="uri.label" space="preserve">
+        <source><![CDATA[URL]]></source>
+        <target><![CDATA[URL]]></target>
+      </trans-unit>
+      <trans-unit id="download.label" space="preserve">
+        <source><![CDATA[Download]]></source>
+        <target><![CDATA[Sitemap herunterladen]]></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
