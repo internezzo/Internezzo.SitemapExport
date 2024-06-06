@@ -17,6 +17,5 @@
         "neos": {
             "package-key": "Internezzo.SitemapExport"
         }
-    },
-    "version": "1.0.0"
+    }
 }
