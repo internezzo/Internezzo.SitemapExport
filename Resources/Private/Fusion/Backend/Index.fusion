@@ -5,7 +5,8 @@ prototype(Internezzo.SitemapExport:Backend.Index) < prototype(Neos.Fusion:Compon
         uriLabel = ${Translation.translate('uri.label', 'URL', [], 'Backend', 'Internezzo.SitemapExport')}
         downloadLabel = ${Translation.translate('download.label', 'URL', [], 'Backend', 'Internezzo.SitemapExport')}
         language = ${language}
-        languages = ${languageDimensionPresets}
+        country = ${country}
+        languages = ${languageDimensions}
         nodes = Neos.Fusion:Loop {
             items = Neos.Seo:Helper.SitemapUrls {
                 startingPoint = ${siteNode}

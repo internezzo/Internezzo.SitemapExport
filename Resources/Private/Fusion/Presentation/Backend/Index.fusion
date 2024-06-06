@@ -3,15 +3,19 @@ prototype(Internezzo.SitemapExport:Backend.Presentation.Index) < prototype(Neos.
     titleLabel = ''
     uriLabel = ''
     downloadLabel = ''
-    language = 'de'
+    language = ''
+    country = ''
     languages = ${[]}
     nodes = ''
 
     renderer = afx`
         <div class="neos-content">
+            <Neos.Fusion:Debug>
+                {props.languages}
+            </Neos.Fusion:Debug>
             <Neos.Fusion:Loop items={props.languages}>
-                <Neos.Fusion:Link.Action class={'neos-button' + (props.language == itemKey ? ' neos-active' : '')} href.package="Internezzo.SitemapExport" href.controller="backend\\SitemapExport" href.action="index" href.arguments={{language: itemKey}}>
-                    {String.toUpperCase(itemKey)}
+                <Neos.Fusion:Link.Action class={'neos-button' + ((props.language == item.language[0] && props.country == item.country[0]) || (props.language == item.language[0] && !props.country) ? ' neos-active' : '')} href.package="Internezzo.SitemapExport" href.controller="backend\\SitemapExport" href.action="index" href.arguments={{language: item.language[0], country: item.country[0]}}>
+                    {String.toUpperCase((props.country ? (item.country[0] + '_') : '') + item.language[0])}
                 </Neos.Fusion:Link.Action>
                 &nbsp;
             </Neos.Fusion:Loop>
@@ -27,7 +31,7 @@ prototype(Internezzo.SitemapExport:Backend.Presentation.Index) < prototype(Neos.
                 </tbody>
             </table>
             <div class="neos-footer">
-                <Neos.Fusion:Link.Action class="neos-button neos-button-primary" href.package="Internezzo.SitemapExport" href.controller="backend\\SitemapExport" href.action="download" href.arguments={{language: props.language}}>
+                <Neos.Fusion:Link.Action class="neos-button neos-button-primary" href.package="Internezzo.SitemapExport" href.controller="backend\\SitemapExport" href.action="download" href.arguments={{language: props.language, country: props.country}}>
                     {String.toUpperCase(props.language)} {props.downloadLabel}
                 </Neos.Fusion:Link.Action>
             </div>
